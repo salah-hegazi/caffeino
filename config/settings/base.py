@@ -282,3 +282,6 @@ REST_FRAMEWORK = {
 CORS_URLS_REGEX = r"^/api/.*$"
 # Your stuff...
 # ------------------------------------------------------------------------------
+from mongoengine import connect
+
+connect('caffeino_db', host='mongodb://root:example@mongo/caffeino_db', port=27017)
