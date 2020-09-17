@@ -35,7 +35,7 @@ USE_L10N = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
-LOCALE_PATHS = [str(ROOT_DIR / "locale")]
+LOCALE_PATHS = [str(ROOT_DIR / "localedefault")]
 
 # DATABASES
 # ------------------------------------------------------------------------------
@@ -283,6 +283,4 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # Your stuff...
 # ------------------------------------------------------------------------------
 from mongoengine import connect
-
-# connect(host={'mongodb://root:example@mongo/caffeino_db'}, port=27017)
 connect('caffeino_db', username='root', password='example', host='mongo', port=27017, authentication_source='admin')

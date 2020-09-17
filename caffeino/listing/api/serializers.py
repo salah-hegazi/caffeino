@@ -5,10 +5,9 @@ from caffeino.listing.models import Pod, Machine
 class PodSerializer(DocumentSerializer):
     class Meta:
         model = Pod
-        fields = '__all__'
-
+        exclude = ('id', )
 
 class MachineSerializer(DocumentSerializer):
     class Meta:
         model = Machine
-        fields = '__all__'
+        exclude = ('id', )

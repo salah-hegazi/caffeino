@@ -20,6 +20,7 @@ services:
     env_file:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
+      - ./.envs/.local/.mongodb
     ports:
       - "8000:8000"
     command: /start
@@ -43,19 +44,23 @@ services:
       - "27017:27017"
     volumes:
       - ./init-db/init-db.js:/docker-entrypoint-initdb.d/init-db.js:ro
+    env_file:
+      - ./.envs/.local/.mongodb
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: caffeino_db
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
 
   mongo-express:
     image: mongo-express
     restart: always
     ports:
       - 8081:8081
+    env_file:
+      - ./.envs/.local/.mongodb
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
 
   docs:
     image: caffeino_local_docs
