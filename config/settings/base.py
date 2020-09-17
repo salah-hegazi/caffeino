@@ -75,7 +75,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "caffeino.users.apps.UsersConfig",
-    # Your stuff: custom apps go here
+    "caffeino.listing.apps.ListingConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -275,7 +275,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
@@ -284,4 +284,5 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # ------------------------------------------------------------------------------
 from mongoengine import connect
 
-connect('caffeino_db', host='mongodb://root:example@mongo/caffeino_db', port=27017)
+# connect(host={'mongodb://root:example@mongo/caffeino_db'}, port=27017)
+connect('caffeino_db', username='root', password='example', host='mongo', port=27017, authentication_source='admin')

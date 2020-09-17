@@ -1,13 +1,13 @@
 db.machines.insertMany([
-    {sku: 'CM001', product_type: 'COFFEE_MACHINE_SMALL', water_line_compatible: 'false'},
-    {sku: 'CM002', product_type: 'COFFEE_MACHINE_SMALL', water_line_compatible: 'false'},
-    {sku: 'CM003', product_type: 'COFFEE_MACHINE_SMALL', water_line_compatible: 'true'},
-    {sku: 'CM101', product_type: 'COFFEE_MACHINE_LARGE', water_line_compatible: 'false'},
-    {sku: 'CM102', product_type: 'COFFEE_MACHINE_LARGE', water_line_compatible: 'true'},
-    {sku: 'CM103', product_type: 'COFFEE_MACHINE_LARGE', water_line_compatible: 'true'},
-    {sku: 'EM001', product_type: 'ESPRESSO_MACHINE', water_line_compatible: 'false'},
-    {sku: 'EM002', product_type: 'ESPRESSO_MACHINE', water_line_compatible: 'false'},
-    {sku: 'EM003', product_type: 'ESPRESSO_MACHINE', water_line_compatible: 'true'}
+    {sku: 'CM001', product_type: 'COFFEE_MACHINE_SMALL', water_line_compatible: false},
+    {sku: 'CM002', product_type: 'COFFEE_MACHINE_SMALL', water_line_compatible: false},
+    {sku: 'CM003', product_type: 'COFFEE_MACHINE_SMALL', water_line_compatible: true},
+    {sku: 'CM101', product_type: 'COFFEE_MACHINE_LARGE', water_line_compatible: false},
+    {sku: 'CM102', product_type: 'COFFEE_MACHINE_LARGE', water_line_compatible: true},
+    {sku: 'CM103', product_type: 'COFFEE_MACHINE_LARGE', water_line_compatible: true},
+    {sku: 'EM001', product_type: 'ESPRESSO_MACHINE', water_line_compatible: false},
+    {sku: 'EM002', product_type: 'ESPRESSO_MACHINE', water_line_compatible: false},
+    {sku: 'EM003', product_type: 'ESPRESSO_MACHINE', water_line_compatible: true}
 ]);
 
 db.pods.insertMany([
